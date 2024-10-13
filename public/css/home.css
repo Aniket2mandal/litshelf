@@ -1,0 +1,216 @@
+.top-body img
+{
+position: absolute;
+height:500px;
+width:100%;
+margin-top: 59px;
+}
+.transparent{
+    height:500px;
+    width:53%;
+    margin-top:59px;
+    position: absolute;
+    background-color: rgba(237, 171, 47, 0.7);
+}
+.transparent pre{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+    font-size: 50px;
+    margin-left: 100px;
+    margin-top:100px;
+    color:white
+}
+.transparent a{
+    position: absolute;
+    margin-top:20px;
+    margin-left: 100px;
+}
+.category-btn{
+    position: absolute;
+    margin-top:600px;
+margin-left:85%;
+}
+
+/* FOR BOOKS */
+.books-header h1 {
+    margin-top: 650px;
+    margin-left: 35%;
+    position: absolute;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.books-header h1:hover {
+    color:rgba(237, 171, 47);
+    transform: scale(1.1); /* Increase the size */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add shadow */
+}
+
+.sub-header h1{
+    margin-top: 750px;
+    margin-left: 200px;
+    position: absolute;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+    font-size: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.sub-header h1:hover {
+    text-decoration: underline;
+    text-decoration-color: orange;
+}
+
+.sub-header2 h1{
+    margin-top: 1150px;
+    margin-left: 200px;
+    position: absolute;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+    font-size: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.sub-header2 h1:hover {
+    text-decoration: underline;
+    text-decoration-color: orange;
+}
+
+.new-arrival{
+    position:absolute;
+    height:500px;
+    width:1000px;
+    margin-top:800px;
+    margin-left:300px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.new-arrival2{
+    position:absolute;
+    height:500px;
+    width:1000px;
+    margin-top:1500px;
+    margin-left:300px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.description{
+    display: flex;
+    justify-content: space-between;
+
+}
+.description p{
+
+    font-size: medium;
+    margin-top:20px;
+
+}
+.book1{
+    margin-left:-100px;
+      /* Add shadows to create the "card" effect */
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3);
+      transition: 0.5s;
+      padding: 2px 16px;
+      height:fit-content;
+      width: fit-content;
+
+}
+.book1:hover{
+    box-shadow: 0 10px 8px 0 rgba(0,0,0,0.3);
+}
+.book1 img{
+    height:160px;
+    width:160px;
+
+}
+.book1 pre{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    margin-top:5px;
+
+}
+.book1 a{
+    margin-left:5px;
+
+ }
+
+.book2{
+
+      /* Add shadows to create the "card" effect */
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3);
+      transition: 0.5s;
+      padding: 2px 16px;
+      height:fit-content;
+      width: fit-content;
+}
+.book2:hover{
+    box-shadow: 0 10px 8px 0 rgba(0,0,0,0.3);
+}
+.book2 img{
+    height:160px;
+    width:160px;
+}
+.book2 pre{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    margin-top:5px;
+
+}
+.book2 a{
+margin-left:5px;
+}
+
+.book3{
+      /* Add shadows to create the "card" effect */
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3);
+      transition: 0.5s;
+      padding: 2px 16px;
+      height:fit-content;
+      width: fit-content;
+}
+.book3:hover{
+    box-shadow: 0 10px 8px 0 rgba(0,0,0,0.3);
+}
+.book3 img{
+    height:160px;
+    width:160px;
+}
+.book3 pre{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    margin-top:5px;
+
+}
+.book3 a{
+    margin-left:5px;
+ }
+
+ .book4{
+
+      /* Add shadows to create the "card" effect */
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3);
+      transition: 0.5s;
+      padding: 2px 16px;
+      height:fit-content;
+      width: fit-content;
+}
+.book4:hover{
+    box-shadow: 0 10px 8px 0 rgba(0,0,0,0.3);
+}
+.book4 img{
+    height:160px;
+    width:160px;
+}
+.book4 pre{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    margin-top:5px;
+
+}
+.book4 a{
+    margin-left:5px;
+ }
+
+
