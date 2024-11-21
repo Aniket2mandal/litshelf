@@ -7,7 +7,7 @@
     <title>Document</title>
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
-<link rel="stylesheet" href="css/welcome.css">
+<link rel="stylesheet" href="css/about.css">
 <body>
     <div class="footer">
 

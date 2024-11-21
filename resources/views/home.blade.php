@@ -86,7 +86,7 @@ Dracula
 
 
 <div class="sub-header2">
-    <h1>LOVE</h1>
+    <h1>Love</h1>
 </div>
 <div class="new-arrival2">
     {{-- first book --}}

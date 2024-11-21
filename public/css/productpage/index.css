@@ -1,0 +1,106 @@
+.product{
+display:flex;
+margin-top:50px;
+margin-left:100px;
+margin-bottom:50px;
+background-color: white;
+}
+.product-image{
+    background-color: rgb(174, 172, 172);
+    height:600px;
+    width:500px;
+    margin-top:50px;
+}
+.product-image img{
+    height:590px;
+    width:490px;
+   margin-top:5px;
+   margin-left:5px;
+}
+.product-details{
+    margin-top:30px;
+    margin-left:80px;
+}
+.product-name{
+width:500px;
+margin-top:-25px;
+display:flex;
+justify-content: space-between;
+}
+.catlist{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+    color:gray;
+}
+.form-control{
+padding-top:10px;
+padding-bottom:10px;
+padding-left: 15px;
+padding-right: 15px;
+}
+.btn-cart{
+    background-color:rgba(237, 171, 47);
+    margin-top:30px;
+    padding-top:10px;
+    padding-bottom:10px;
+    padding-left:210px;
+    padding-right:210px;
+    border:none;
+
+    text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    color:black;
+font-weight: bold;
+}
+.btn-cart:hover{
+background-color: rgb(205, 155, 64);
+font-size: small;
+transition: 0.8s;
+}
+.info{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+    color:gray;
+}
+
+.overview{
+    margin-top:50px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+    color:rgb(105, 103, 103);
+}
+.overview:hover{
+    text-decoration:underline;
+    text-decoration-color:rgba(237, 171, 47) ;
+    font-size: larger;
+    transition: 0.9s;
+}
+
+.description-product{
+    width:510px;
+    color:rgb(77, 75, 75);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.short-image{
+    height:100px;
+    width:100px;
+    background-color:rgb(174, 172, 172);
+}
+.short-image img{
+    height:90px;
+    width:90px;
+    margin-left:5px;
+    margin-top:5px;
+}
+.piece{
+    display:flex;
+    justify-content: space-between;
+}
+.select{
+    border: none;
+    border-radius:10px;
+    padding-top:10px;
+    padding-bottom:10px;
+    background-color: black;
+    color:white
+    /* background-color: none; */
+}

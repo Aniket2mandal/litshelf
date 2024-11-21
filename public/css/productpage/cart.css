@@ -1,0 +1,65 @@
+.cartdiv{
+    display:flex;
+    justify-content: space-between;
+margin-top:100px;
+    margin:auto;
+}
+.productside{
+    background-color: white;
+    height:400px;
+    width:500px;
+    padding:20 50px;
+margin-left:100px;
+margin-top:100px;
+border-radius: 20px;
+}
+
+.totalamount{
+    background-color: white;
+    height:300px;
+    width:fit-content;
+    /* padding:20px 200px; */
+    margin-right:100px;
+    margin-top:100px;
+    border-radius: 20px;
+
+}
+.upperpart{
+    display:flex;
+    justify-content: space-between;
+}
+.totalamount p{
+    margin-top: 20px;
+    margin-left: 20px;
+
+}
+.button{
+    display:flex;
+  /* justify-content: space-between; */
+}
+.esewa-btn{
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    margin-left:50px;
+    margin-top:20px;
+}
+.cash-btn{
+    display: inline-block;
+    padding: 10px 20px;
+    color: black;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    margin-left:50px;
+    margin-top:20px;
+}

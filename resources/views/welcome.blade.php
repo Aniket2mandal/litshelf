@@ -33,8 +33,8 @@ are 'boring' ,think again.</pre>
             <a href="{{route('index')}}">LOGO</a>
             </div>
             <div class=lists>
-                <a href="{{route('index')}}">Home</a>
-                <a href="{{route('about')}}">About</a>
+                <a href="">Home</a>
+                <a href="">About</a>
     @if (Route::has('login'))
                         @auth
                             <a href="{{ url('/home') }}" >Home</a>

@@ -1,14 +1,18 @@
+body{
+    background-color: rgb(214, 214, 214);
+}
+
 .top-body img
 {
 position: absolute;
 height:500px;
 width:100%;
-margin-top: 59px;
+margin-top: 0px;
 }
 .transparent{
     height:500px;
     width:53%;
-    margin-top:59px;
+    margin-top:0px;
     position: absolute;
     background-color: rgba(237, 171, 47, 0.7);
 }
@@ -45,6 +49,7 @@ margin-left:85%;
     color:rgba(237, 171, 47);
     transform: scale(1.1); /* Increase the size */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add shadow */
+    background-color: white;
 }
 
 .sub-header h1{
@@ -74,6 +79,19 @@ margin-left:85%;
     text-decoration: underline;
     text-decoration-color: orange;
 }
+.sub-header3 h1{
+    margin-top: 1550px;
+    margin-left: 200px;
+    position: absolute;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+    font-size: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.sub-header3 h1:hover {
+    text-decoration: underline;
+    text-decoration-color: orange;
+}
 
 .new-arrival{
     position:absolute;
@@ -83,17 +101,9 @@ margin-left:85%;
     margin-left:300px;
     display: flex;
     justify-content: space-between;
+    /* background-color: white; */
 }
 
-.new-arrival2{
-    position:absolute;
-    height:500px;
-    width:1000px;
-    margin-top:1500px;
-    margin-left:300px;
-    display: flex;
-    justify-content: space-between;
-}
 
 
 .description{
@@ -108,14 +118,16 @@ margin-left:85%;
 
 }
 .book1{
+
     margin-left:-100px;
       /* Add shadows to create the "card" effect */
       box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3);
       transition: 0.5s;
-      padding: 2px 16px;
-      height:fit-content;
-      width: fit-content;
-
+      padding: 20px 16px;
+      height:250px;
+      width: 190px;
+      background-color: white;
+      border-radius: 5px;
 }
 .book1:hover{
     box-shadow: 0 10px 8px 0 rgba(0,0,0,0.3);
@@ -123,27 +135,46 @@ margin-left:85%;
 .book1 img{
     height:160px;
     width:160px;
-
 }
 .book1 pre{
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
+    font-size: 15px;
     margin-top:5px;
-
+}
+.book1 p{
+    position: absolute;
+    margin-top:40px;
+    padding-right: 5px;
+    margin-left:150px;
 }
 .book1 a{
     margin-left:5px;
-
+    text-decoration: none;
  }
 
-.book2{
+ /* PRODUCT 2 */
+ .new-arrival2{
+    position:absolute;
+    height:500px;
+    width:1000px;
+    margin-top:1200px;
+    margin-left:200px;
+    display: flex;
+    /* justify-content: space-between; */
 
-      /* Add shadows to create the "card" effect */
-      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3);
-      transition: 0.5s;
-      padding: 2px 16px;
-      height:fit-content;
-      width: fit-content;
+}
+.book2{
+    /* margin-left:-100px; */
+    margin-left:30px;
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3);
+    transition: 0.5s;
+    padding: 20px 16px;
+    height:250px;
+    width: 190px;
+    /* margin-top:50px; */
+    border-radius: 5px;
 }
 .book2:hover{
     box-shadow: 0 10px 8px 0 rgba(0,0,0,0.3);
@@ -155,20 +186,42 @@ margin-left:85%;
 .book2 pre{
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
+    font-size: 15px;
     margin-top:5px;
-
+}
+.book2 p{
+    position: absolute;
+    margin-top:40px;
+    padding-right: 5px;
+    margin-left:150px;
 }
 .book2 a{
-margin-left:5px;
-}
+    margin-left:5px;
+    text-decoration: none;
+ }
 
+
+
+ /* PRODUCT 3 */
+ .new-arrival3{
+    position:absolute;
+    height:500px;
+    width:1000px;
+    margin-top:1600px;
+    margin-left:200px;
+    display: flex;
+    /* justify-content: space-between; */
+}
 .book3{
-      /* Add shadows to create the "card" effect */
-      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3);
-      transition: 0.5s;
-      padding: 2px 16px;
-      height:fit-content;
-      width: fit-content;
+    margin-left:30px;
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3);
+    transition: 0.5s;
+    padding: 20px 16px;
+    height:250px;
+    width: 190px;
+    border-radius: 5px;
+    /* margin-top:50px; */
 }
 .book3:hover{
     box-shadow: 0 10px 8px 0 rgba(0,0,0,0.3);
@@ -180,37 +233,63 @@ margin-left:5px;
 .book3 pre{
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
+    font-size: 15px;
     margin-top:5px;
-
+}
+.book3 p{
+    position: absolute;
+    margin-top:40px;
+    padding-right: 5px;
+    margin-left:150px;
 }
 .book3 a{
     margin-left:5px;
+    text-decoration: none;
  }
 
- .book4{
 
-      /* Add shadows to create the "card" effect */
-      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3);
-      transition: 0.5s;
-      padding: 2px 16px;
-      height:fit-content;
-      width: fit-content;
-}
-.book4:hover{
-    box-shadow: 0 10px 8px 0 rgba(0,0,0,0.3);
-}
-.book4 img{
-    height:160px;
-    width:160px;
-}
-.book4 pre{
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: bold;
-    margin-top:5px;
 
-}
-.book4 a{
-    margin-left:5px;
+ /* BUTTONS */
+ .btn{
+    margin-top:10px;
  }
+ .btn-light{
+    background-color: white;
+    color:black;
+    padding:10px;
+ }
+ .btn-light:hover{
+background-color: rgb(240, 236, 236);
+transition: 0.3s;
+ }
+
+ .btn-primary{
+    background-color: rgb(236, 171, 49);
+    color:black;
+    padding-top:8px;
+    padding-bottom:8px;
+    padding-right:40px;
+    padding-left:40px;
+    border-radius: 10px;
+    margin-top:30px;
+ }
+ .btn-primary:hover{
+    background-color: rgb(135, 100, 35);
+    transition: 0.3s;
+ }
+ .btn-warning{
+background-color: rgb(245, 207, 22);
+color:white;
+padding-top:8px;
+padding-bottom:8px;
+padding-right:10px;
+padding-left:10px;
+border-radius: 10px;
+ }
+ .btn-warning:hover{
+    background-color: rgb(158, 142, 57);
+    transition: 0.3s;
+ }
+
 
 

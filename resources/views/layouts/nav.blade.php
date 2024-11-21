@@ -13,22 +13,22 @@
     <div class="app">
     <div class="navigation">
         <div class=logo>
-        <a href="{{route('index')}}">LOGO</a>
+        <a href="">LOGO</a>
         </div>
         <div class=lists>
 
 @if (Route::has('login'))
                     @auth
-                        <a href="{{ url('/home') }}" >Home</a>
-                        <a href="{{route('about')}}">About</a>
-                        <a href="{{route('profile')}}" >
+                        <a href="" >Home</a>
+                        <a href="">About</a>
+                        <a href="{{route('admin.logout')}}" >Logout</a>
                             <div class="profile">
                                 <img src="images/profile.jpg">
                             </div>
                         </a>
                     @else
-                    <a href="{{route('index')}}">Home</a>
-                    <a href="{{route('about')}}">About</a>
+                    <a href="">Home</a>
+                    <a href="">About</a>
                         <a href="{{ route('login') }}" >Login</a>
 
                         @if (Route::has('register'))

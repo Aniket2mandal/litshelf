@@ -1,0 +1,81 @@
+.nav{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3);
+    transition: 0.5s;
+    padding: 2px 16px;
+    height:50px;
+    width: 1500px;
+    display:flex;
+    justify-content: space-between;
+position:relative;
+background-color: white;
+/* margin-top: -1500px;; */
+margin-top:-10px;
+margin-left:-5px;
+}
+.logo h1{
+margin:0;
+padding:0;
+}
+.nav-profile {
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: inline-block; /* Keep inline-block */
+    position: relative; /* Make sure dropdown positions correctly */
+    background-color: red;
+}
+.cart{
+    width: 45px; /* Adjust size as needed */
+    height: 45px; /* Maintain aspect ratio */
+    border-radius: 50%; /* Make it circular */
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    margin-right: 10px;
+
+}
+
+.cart-notification {
+    position: absolute;
+    /* top: -10px; */
+    right: 88px;
+    background-color: rgb(247, 171, 31);
+    color: white;
+    border-radius: 50%;
+    padding: 3px 7px;
+    font-size: 12px;
+    display: none;
+}
+
+.nav img {
+    width: 45px; /* Adjust size as needed */
+    height: 45px; /* Maintain aspect ratio */
+    border-radius: 50%; /* Make it circular */
+    cursor: pointer; /* Change cursor to pointer */
+}
+.lists{
+margin-left:1050px;
+margin-right:20px;
+margin-top:10px;
+}
+.lists a{
+text-decoration: none;
+margin-left:20px;
+font-weight: bold;
+font-size: large;
+color:black;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+justify-content: center;
+align-items: center;
+}
+.lists a:hover{
+    text-decoration: underline;
+    color:rgba(237, 171, 47);
+    text-decoration-color: black;
+
+}
+
+
+
+

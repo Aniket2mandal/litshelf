@@ -1,1 +1,1 @@
-Hello this is my profile page
+this is profile page

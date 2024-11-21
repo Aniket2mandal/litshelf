@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id(); // This will create an auto-incrementing primary key column named BookID
             $table->string('Title', 255);
             $table->string('Author', 255);
-            $table->string('Publisher', 255)->nullable();
+            $table->string('image');
             $table->date('PublishDate')->nullable();
             $table->decimal('Price', 10, 2);
             $table->text('Description')->nullable();
