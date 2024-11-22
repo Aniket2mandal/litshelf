@@ -30,7 +30,7 @@
 
             </div>
             <div class="esewa">
-                <button class="esewa-btn">Esewa</button>
+                <a href="{{route('esewapay')}}" class="esewa-btn" >Esewa</a>
             </div>
         </div>
     </div>

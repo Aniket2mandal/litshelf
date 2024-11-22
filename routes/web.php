@@ -13,6 +13,7 @@ use App\Http\Controllers\front\CartController;
 
 use App\Http\Controllers\front\ShopController;
 use App\Http\Controllers\admin\ProfileController;
+use App\Http\Controllers\Esewa\PaymentController;
 use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\admin\AdminHomeController;
 use App\Http\Controllers\front\FrontHomeController;
@@ -38,6 +39,7 @@ use App\Http\Controllers\admin\AdminRegisterController;
 
 // FRONT
 Route::get('/', [FrontController::class, 'index'])->name('front.home');
+
 Route::group(['prefix'=>'account'],function(){
  Route::group(['middleware'=>'guest'],function(){
    Route::get('/admin/login', [AdminLoginController::class, 'index'])->name('admin.login');
@@ -51,6 +53,7 @@ Route::group(['prefix'=>'account'],function(){
     Route::get('/cart', [CartController::class, 'index'])->name('cart.page');
     Route::post('/pricestore', [CartController::class, 'store'])->name('pricestore');
     Route::get('profile',[UserProfileController::class,'index'])->name('user.profile');
+    Route::get('payment',[PaymentController::class,'pay'])->name('esewapay');
 
     });
 });
