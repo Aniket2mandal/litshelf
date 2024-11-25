@@ -1,16 +1,16 @@
-.nav{
+.nav {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3);
     transition: 0.5s;
-    padding: 2px 16px;
-    height:50px;
-    width: 1400px;
-    display:flex;
+    padding: 3px 16px; /* Adjusted padding for better responsiveness */
+    height: 50px;
+    width: 100%; /* Full width */
+    display: flex;
     justify-content: space-between;
-position:relative;
-background-color: white;
-/* margin-top: -1500px;; */
-margin-top:-10px;
-margin-left:-5px;
+    position: fixed; /* Fixed position */
+    top: 0; /* Stick to the top */
+    left: 0; /* Align with the left side */
+    background-color: white;
+    z-index: 1000; /* Ensures the navbar is above other elements */
 }
 .logo h1{
 margin:0;
