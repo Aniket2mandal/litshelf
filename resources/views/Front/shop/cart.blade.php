@@ -60,8 +60,7 @@
 
                     </div>
                     <div class="price2">
-                        <p id="finalprice">2000</p>
-
+                        <p id="finalprice"></p>
                     </div>
                 </div>
             </div>
@@ -72,10 +71,10 @@
             <div class="button">
                 <div class="cashondelivery">
                     <button class="cash-btn">Cash on Delivery</button>
-
                 </div>
                 <div class="esewa">
-                    <a href="{{ route('esewapay') }}" class="esewa-btn">Esewa</a>
+                    {{-- <a class="esewa-btn" href="" id="payWithEsewa">Esewa</a> --}}
+                    <button class="esewa-btn"  id="payWithEsewa">Esewa</button>
                 </div>
             </div>
         </div>
@@ -177,9 +176,16 @@
                     }
 
                 });
-
             });
 
+
         });
+        $('#payWithEsewa').click(function(e) {
+    e.preventDefault();
+    let tax=2000;
+    let price=$('#finalprice').text();
+    console.log(price);
+    window.location.href = `/account/payment/${price}`;  // Redirect to the new URL
+});
     </script>
 @endsection

@@ -3,29 +3,30 @@
 namespace App\Http\Controllers\Esewa;
 
 use App\Http\Controllers\Controller;
+use Auth;
 use Illuminate\Http\Request;
-use Nujan\Esewa\Esewa;
+use RemoteMerge\Esewa\Client;
+use Str;
 
 class PaymentController extends Controller
 {
-public function pay(){
+public function pay($totalPrice){
+    // dd($request->tax);
+    // Set success and failure callback URLs.
+$successUrl = 'http://127.0.0.1:8000/account/index';
+$failureUrl = 'https://example.com/failed.php';
 
-  $esewa = new Esewa();
+// Initialize eSewa client for development.
+$esewa = new Client([
+    'merchant_code' => 'EPAYTEST',
+    'success_url' => $successUrl,
+    'failure_url' => $failureUrl,
+]);
 
- $data = [
-    'amount' => 100,
-    'tax_amount' => 10,
-    'total_amount' => 110,
-    'transaction_uuid' => uniqid(mt_rand(), true),
-    'product_code' => 'EPAYTEST',
-    'product_service_charge' => 0,
-    'product_delivery_charge' => 0,
-    'success_url' => 'http://review.test/esewa/success',
-    'failure_url' => 'https://google.com',
-    'signed_field_names' => 'total_amount,transaction_uuid,product_code',
-];
+$unqUserId = Auth::user()->id . Str::random(12);
 
-$response = $esewa->sendPaymentRequest($data);
+$esewa->payment('P101W201', $totalPrice, 15, 80, 50);
+
 }
 // Handle the response as needed
 }
