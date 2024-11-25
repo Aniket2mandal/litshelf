@@ -3,7 +3,7 @@
     transition: 0.5s;
     padding: 2px 16px;
     height:50px;
-    width: 1500px;
+    width: 1400px;
     display:flex;
     justify-content: space-between;
 position:relative;
@@ -55,9 +55,10 @@ padding:0;
     cursor: pointer; /* Change cursor to pointer */
 }
 .lists{
-margin-left:1050px;
+margin-left:950px;
 margin-right:20px;
 margin-top:10px;
+display:flex;
 }
 .lists a{
 text-decoration: none;

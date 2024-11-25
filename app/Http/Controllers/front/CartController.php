@@ -7,18 +7,43 @@ use App\Models\Cart;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
 {
     public function index(){
-        // dd($id);
-        // $book_data=Book::where('id',$id)->get();
-        // $categoryid=Book::where('id',$id)->pluck('CategoryID');
-        // $categories = Category::where('id',$categoryid)->pluck('CategoryName');
-        // dd($categories);
-        // dd($book_data->image);
-        // dd($book_data);
-        return view('Front.shop.cart');
+
+        $userId = Auth::id();
+
+        // Fetch cart items for the authenticated user
+        $cart = Cart::where('user_id', $userId)->get();
+
+        $books = [];
+        if ($cart->isNotEmpty()) {
+            $bookIds = $cart->pluck('book_id');
+
+            // Fetch all books in a single query
+            $booksData = Book::whereIn('id', $bookIds)->get(['id', 'image', 'Title', 'price']);
+
+            // Combine cart and book data
+            foreach ($cart as $cartItem) {
+                $book = $booksData->where('id', $cartItem->book_id)->first();
+                if ($book) {
+                    $books[] = [
+                        'book_id' => $book->id,
+                        'image' => $book->image,
+                        'Title' => $book->Title,
+                        'price' => $book->price,
+                        'quantity' => $cartItem->quantity,
+                        'id' => $cartItem->id,
+                        'total_price' => $cartItem->quantity * $book->price,
+                    ];
+                }
+            }
+        }
+
+        return view('Front.shop.cart', compact('books', 'cart'));
+
     }
 
     public function store(Request $request){
@@ -35,5 +60,14 @@ class CartController extends Controller
         $cart->quantity=$request->quantity;
         $cart->save();
         return response()->json(["Sucess"=>true],200);
+    }
+
+    public function delete($id){
+        // dd($id);
+        $cart=Cart::where('id',$id)->first();
+        $cart->delete();
+
+        return response()->json(["Sucess" =>true],200);
+
     }
 }

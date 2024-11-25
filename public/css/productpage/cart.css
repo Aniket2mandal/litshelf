@@ -6,40 +6,74 @@ margin-top:100px;
 }
 .productside{
     background-color: white;
-    height:400px;
-    width:500px;
+    height:fit-content;
+    width:760px;
     padding:20 50px;
+    padding-top:20px;
+    padding-bottom:20px;
+    padding-left:20px;
+    padding-right:20px;
 margin-left:100px;
 margin-top:100px;
-border-radius: 20px;
+border-radius: 5px;
+display: flex;
+/* justify-content: space-between; */
 }
 
 .totalamount{
     background-color: white;
-    height:300px;
+    height:fit-content;
     width:fit-content;
     /* padding:20px 200px; */
     margin-right:100px;
     margin-top:100px;
-    border-radius: 20px;
+    border-radius: 5px;
+    padding-left:10px;
+    padding-right:10px;
+    padding-top:20px;
+    padding-bottom:20px
 
 }
 .upperpart{
     display:flex;
     justify-content: space-between;
 }
-.totalamount p{
+.para p{
     margin-top: 20px;
     margin-left: 20px;
-
+    margin-right:200px;
+   color: rgb(109, 109, 109);
 }
+.price p{
+    margin-left:100px;
+    padding-right:10px;
+    font-size: larger;
+}
+
+.lowerpart{
+    display:flex;
+    justify-content: space-between;
+}
+
+.para2 p{
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right:200px;
+    font-size: larger;
+}
+.price2 p{
+    margin-left:100px;
+    padding-right:10px;
+    font-size: larger;
+}
+
 .button{
     display:flex;
   /* justify-content: space-between; */
 }
 .esewa-btn{
     display: inline-block;
-    padding: 10px 20px;
+    padding: 10px 80px;
     color: #fff;
     background-color: black;
     border: none;
@@ -47,12 +81,17 @@ border-radius: 20px;
     cursor: pointer;
     text-align: center;
     text-decoration: none;
-    margin-left:50px;
+    margin-left:40px;
+    margin-right:50px;
     margin-top:20px;
+}
+.esewa-btn:hover{
+    background-color: rgb(103, 102, 102);
+    transition: 0.5s;
 }
 .cash-btn{
     display: inline-block;
-    padding: 10px 20px;
+    padding: 10px 55px;
     color: black;
     background-color: white;
     border: none;
@@ -60,6 +99,111 @@ border-radius: 20px;
     cursor: pointer;
     text-align: center;
     text-decoration: none;
-    margin-left:50px;
+    /* margin-left:50px; */
     margin-top:20px;
+}
+
+.cash-btn:hover{
+    background-color: rgb(232, 231, 231);
+    transition: 0.5s;
+}
+/* Main container for all items */
+.items {
+    display: flex;
+    flex-direction: column; /* Stack rows vertically */
+    gap: 20px; /* Add spacing between rows */
+    margin: 20px 0;
+}
+
+/* Each row (item) */
+.item-row {
+    display: flex;
+    align-items: center; /* Vertically align items in the row */
+    justify-content: space-between; /* Space between columns */
+    padding: 15px;
+    border: 1px solid #ddd; /* Add a light border */
+    border-radius: 8px; /* Rounded corners */
+    background-color: #f9f9f9; /* Light background for better visibility */
+    gap: 20px; /* Space between sections */
+}
+.cross{
+    height:15px;
+    width:20px;
+    /* margin-top:-100px;
+    margin-left:50px; */
+    /* color:red; */
+}
+
+/* Image container */
+.imagemain {
+    flex: 0 0 auto; /* Prevent resizing */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #eaeaea; /* Placeholder background */
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover; /* Ensure the image fits properly */
+    border-radius: 5px; /* Optional: rounded corners for images */
+}
+
+/* Details container */
+.details {
+    flex: 1; /* Allow details section to grow */
+    display: flex;
+    flex-direction: column; /* Stack name and price vertically */
+    gap: 5px; /* Space between text elements */
+    font-size: 14px;
+    color: #333;
+}
+
+/* Quantity control container */
+.quantity-group {
+    margin-left: 30px;
+    display: flex;
+    align-items: center;
+    gap: 100px; /* Space between buttons and quantity */
+}
+
+/* Button styles */
+.sub, .add {
+    width: 30px;
+    height: 30px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 50%; /* Circular buttons */
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.sub:hover, .add:hover {
+    background-color: #444; /* Darker shade on hover */
+}
+
+/* Quantity display */
+.quantity {
+    width: 40px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Price container */
+.price {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    text-align: right;
 }

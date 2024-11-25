@@ -1,15 +1,21 @@
 .product{
 display:flex;
 margin-top:50px;
-margin-left:100px;
+margin-left:50px;
+margin-right: 50px;
 margin-bottom:50px;
 background-color: white;
+padding-left: 20px;
+padding-right: 20px;;
+padding-bottom:50px;
+border-radius: 10px;
 }
 .product-image{
     background-color: rgb(174, 172, 172);
     height:600px;
     width:500px;
     margin-top:50px;
+    margin-left: 50px;
 }
 .product-image img{
     height:590px;
@@ -19,7 +25,8 @@ background-color: white;
 }
 .product-details{
     margin-top:30px;
-    margin-left:80px;
+    margin-left:150px;
+
 }
 .product-name{
 width:500px;

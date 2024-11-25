@@ -40,8 +40,8 @@
 
                 <div class="piece">
                     <select class="select" id="quantity"name="quantity" required>
-                        <option>Select Quantity</option>
-                        @endphp
+                        <option disabled>Select Quantity</option>
+                        {{-- @endphp --}}
                         @for ($i = 1; $i <= 10; $i++)
                             <option value="{{ $i }}">{{ $i }}</option>
                         @endfor
