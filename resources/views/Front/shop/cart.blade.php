@@ -182,10 +182,33 @@
         });
         $('#payWithEsewa').click(function(e) {
     e.preventDefault();
-    let tax=2000;
-    let price=$('#finalprice').text();
+    let shipping=$('#delivery').text();
+    let price=$('#grand-total').text();
     console.log(price);
-    window.location.href = `/account/payment/${price}`;  // Redirect to the new URL
+    // window.location.href = `/account/payment/${phttps://uat.esewa.com.np/epay#/rice}`;  // Redirect to the new URL
+//     let url = `/account/payment?price=${encodeURIComponent(price)}&shipping=${encodeURIComponent(shipping)}`;
+//     window.location.href = url;
+// });
+
+$.ajax({
+        url: '/account/payment', // URL to send the request to
+        type: 'POST',
+        data: {
+            _token: '{{ csrf_token() }}', // Include CSRF token for Laravel
+            shipping: shipping,
+            price: price
+        },
+        success: function(response) {
+            if (response.redirect_url) {
+                window.location.href = response.redirect_url;
+            } else {
+                console.error('No redirect URL provided');
+            }
+        },
+        error: function(xhr) {
+            console.error(xhr.responseText);
+        }
+    });
 });
     </script>
 @endsection

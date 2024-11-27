@@ -54,7 +54,8 @@ Route::group(['prefix'=>'account'],function(){
     Route::post('/pricestore', [CartController::class, 'store'])->name('pricestore');
     Route::post('/pricedelete/{id}', [CartController::class, 'delete'])->name('pricedelete');
     Route::get('profile',[UserProfileController::class,'index'])->name('user.profile');
-    Route::get('/payment/{totalPrice}',[PaymentController::class,'pay'])->name('esewapay');
+    Route::post('/payment',[PaymentController::class,'pay'])->name('esewapay');
+    Route::get('/payment-success',[PaymentController::class,'success'])->name('payment-success');
 
     });
 });

@@ -10,10 +10,10 @@ use Str;
 
 class PaymentController extends Controller
 {
-public function pay($totalPrice){
+public function pay(Request $request){
     // dd($request->tax);
     // Set success and failure callback URLs.
-$successUrl = 'http://127.0.0.1:8000/account/index';
+$successUrl = route('payment-success');
 $failureUrl = 'https://example.com/failed.php';
 
 // Initialize eSewa client for development.
@@ -23,10 +23,38 @@ $esewa = new Client([
     'failure_url' => $failureUrl,
 ]);
 
-$unqUserId = Auth::user()->id . Str::random(12);
+$transaction_id = Auth::user()->id . Str::random(12);
+$totalPrice=$request->price;
+$shipping=$request->shipping;
+$paymentUrl = 'https://uat.esewa.com.np/epay/main';
+$queryParams = http_build_query([
+    'scd' => 'EPAYTEST',
+    'su' => $successUrl,
+    'fu' => $failureUrl,
+    'pid' => $transaction_id,
+    'amt' => $totalPrice,
+    'txAmt' => 15,
+    'psc' => 80,
+    'pdc' => $shipping,
+    'tAmt' => $totalPrice + 15 + 80 + $shipping,
+]);
 
-$esewa->payment('P101W201', $totalPrice, 15, 80, 50);
+$redirectUrl = $paymentUrl . '?' . $queryParams;
+// $redirectUrl =$esewa->payment($transaction_id, $totalPrice, 15, 80, $shipping);
 
+ return response()->json(data: ['redirect_url' => $redirectUrl]);
 }
 // Handle the response as needed
+
+public function success(Request $request){
+
+        // Redirect to the account index page without query parameters
+        return redirect()->route(route: 'front.index');
+
+}
+
+public function failed(){
+
+}
+
 }
