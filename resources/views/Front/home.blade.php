@@ -32,7 +32,7 @@ are 'boring' ,think again.</pre>
         {{-- <div class="card-body"> --}}
         <div class="nav card-body">
             <div class=logo>
-                <a href="">LOGO</a>
+                <a href=""><img src="{{asset('css/raw/logo.png')}}" style="height:20px;width:20px;"></a>
             </div>
             <div class=lists>
                 <a href="">Home</a>

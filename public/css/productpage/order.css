@@ -1,0 +1,119 @@
+body {
+    /* font-family: Arial, sans-serif;
+    background-color: #f9f9f9; */
+    margin: 0;
+    padding: 20px;
+    /* display: flex; */
+    justify-content: center;
+  }
+.content{
+    margin-top:100px;
+}
+  .order-card {
+    background-color: white;
+    height:fit-content;
+    width:1000px;
+    padding:20 50px;
+    padding-top:20px;
+    padding-bottom:20px;
+    padding-left:20px;
+    padding-right:20px;
+margin-left:220px;
+margin-top:10px;
+border-radius: 5px;
+/* display: flex; */
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .order-header {
+display: flex;
+justify-content: space-between;
+  }
+
+  .order-header .username {
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+  }
+
+  .status {
+background-color: black;
+border-radius: 20px;
+height:fit-content;
+width: fit-content;
+padding-top:3px;
+padding-bottom:3px;
+padding-left:12px;
+padding-right:12px;
+color:white;
+  }
+
+  .product-details {
+display: flex;
+/* justify-content: space-between; */
+  }
+  .product-image{
+    height:fit-content;
+    width:fit-content;
+    padding-right:10px;
+    padding-left:10px;
+    padding-top:10px;
+    padding-bottom:10px;
+    align-items: center;
+    margin-left:10px;
+    margin-top:10px;
+    border-radius: 10px;
+    background-color: #DFDEDE;
+  }
+
+  .product-image img {
+height:85px;
+width:85px;
+margin:0
+  }
+
+  .product-info {
+    margin-left:50px;
+width:600px;
+display:flex;
+justify-content: space-between;
+  }
+
+  .product-info h4 {
+margin-top:10px;
+  }
+
+  .titles .details {
+    margin-top: -20px;
+    color: rgb(150, 149, 149);
+    width: 200px;
+    max-height: 30px; /* Initially set the max-height to 100px for truncation */
+    overflow: hidden;
+    position: relative;
+    transition: max-height 0.3s ease; /* Smooth transition for expanding and collapsing */
+}
+
+.titles .details.expanded {
+    max-height: 100px; /* Increase the max-height when expanded to show the full content */
+    white-space: normal; /* Allow text to wrap normally */
+}
+
+.titles .see-more {
+    display: block;
+    color: black;
+    cursor: pointer;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: white;
+    padding-left: 5px;
+}
+
+  .product-info .price {
+margin-top:10px;
+  }
+
+  .product-info .quantity {
+margin-top:10px;
+width:100px;
+  }

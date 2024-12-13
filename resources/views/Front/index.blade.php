@@ -5,6 +5,7 @@
 {{-- @vite(['resources/sass/app.scss', 'resources/js/app.js']) --}}
 
 {{-- <link rel="stylesheet" href="css/welcome.css"> --}}
+
 <div class="top-body">
 
     <img src="{{asset('images/books.jpg')}}">
@@ -31,108 +32,66 @@ be explored.</pre>
     <h1>Our Populars</h1>
 </div>
 
+
 <div class="new-arrival">
     {{-- first book --}}
-    @foreach($books as $item)
-    <div class="book1">
-        @if ($item->image)
-                    <img src="{{asset('images/'.$item->image)}}" style="width: 150px;height:150px">
-                    @else
-                       <img src="#">
-                    @endif
-        <div class="description">
-            <pre>{{$item->Title}}<br>
-            </pre>
-            <p>{{$item->Price}}</p>
+    @foreach ($book as $item)
+        <div class="book1">
+            @if ($item->image)
+                <img src="{{ asset('images/' . $item->image) }}" style="width: 150px;height:150px">
+            @else
+                <img src="#">
+            @endif
+            <div class="description">
+                <pre>{{ $item->Title }}<br>
+        </pre>
+                <p>{{ $item->Price }}</p>
+            </div>
+            <div class="btn">
+                {{-- <a href="#" class=" btn-warning">Add To Cart</a> --}}
+                <a href="{{ route('front.product', $item->id) }}" class=" btn-primary" class="a2">View Detail</a>
+            </div>
         </div>
-        <div class="btn">
-            {{-- <a href="#" class=" btn-warning">Add To Cart</a> --}}
-            <a href="{{route('front.product',$item->id)}}" class=" btn-primary" class="a2">View Detail</a>
-        </div>
-    </div>
+    @endforeach
+</div>
 
-@endforeach
 
+<div class="header">
+    @foreach ($books as $item)
+    @if(count($item->book) !==0)
+        <div class="sub-header2">
+            <h1>{{ $item->CategoryName }}</h1>
+        </div>
+        <div class="new-arrival2">
+        @foreach($item->book as $bookdata)
 
-    {{-- second book --}}
-    {{-- <div class="book2">
-        <img src="images/atomic.png">
-        <div class="description">
-            <pre>Atomic habit
-</pre>
-            <p>350</p>
+            {{-- first book --}}
+
+            <div class="book1">
+                @if ($bookdata->image)
+                    <img src="{{ asset('images/' . $bookdata->image) }}" style="width: 150px;height:150px">
+                @else
+                    <img src="#">
+                @endif
+                <div class="description">
+                    <pre>{{ $bookdata->Title }}<br>
+                    </pre>
+                    <p>{{ $bookdata->Price }}</p>
+                </div>
+                <div class="btn">
+                    {{-- <a href="#" class=" btn-warning">Add To Cart</a> --}}
+                    <a href="{{ route('front.product', $bookdata->id) }}" class=" btn-primary" class="a2">View
+                        Detail</a>
+                </div>
+            </div>
+            @endforeach
         </div>
-        <div class="btn">
-            <a href="#" class=" btn-warning">Add To Cart</a>
-            <a href="#" class=" btn-primary" class="a2">Buy</a>
-        </div>
-    </div> --}}
-    {{-- third book --}}
-    {{-- <div class="book3">
-        <img src="images/ikigai.png">
-        <div class="description">
-            <pre>Ikigai
-</pre>
-            <p>350</p>
-        </div>
-        <div class="btn">
-            <a href="#" class=" btn-warning">Add To Cart</a>
-            <a href="#" class=" btn-primary" class="a2">Buy</a>
-        </div>
-    </div> --}}
-    {{-- fourth book --}}
+@endif
+    @endforeach
 
 </div>
 
-<div class="sub-header2">
-    <h1>Love</h1>
-</div>
-<div class="new-arrival2">
-    {{-- first book --}}
-    @foreach($love_books as $item)
-    <div class="book2">
-        @if ($item->image)
-                    <img src="{{asset('images/'.$item->image)}}" style="width: 150px;height:150px">
-                    @else
-                       <img src="#">
-                    @endif
-        <div class="description">
-            <pre>{{$item->Title}}<br>
-            </pre>
-            <p>{{$item->Price}}</p>
-        </div>
-        <div class="btn">
-            {{-- <a href="#" class=" btn-warning">Add To Cart</a> --}}
-            <a href="{{route('front.product',$item->id)}}" class=" btn-primary" class="a2">View Detail</a>
-        </div>
-    </div>
-@endforeach
-</div>
 
-<div class="sub-header3">
-    <h1>Horror</h1>
-</div>
-<div class="new-arrival3">
-    {{-- first book --}}
-    @foreach($horror_books as $item)
-    <div class="book3">
-        @if ($item->image)
-                    <img src="{{asset('images/'.$item->image)}}" style="width: 150px;height:150px">
-                    @else
-                       <img src="#">
-                    @endif
-        <div class="description">
-            <pre>{{$item->Title}}<br>
-            </pre>
-            <p>{{$item->Price}}</p>
-        </div>
-        <div class="btn">
-            {{-- <a href="#" class=" btn-warning">Add To Cart</a> --}}
-            <a href="{{route('front.product',$item->id)}}" class=" btn-primary" class="a2">View Detail</a>
-        </div>
-    </div>
-@endforeach
-</div>
  {{-- FOR FOOTER --}}
  {{-- @extends('layouts.footer')
  @section('footer')

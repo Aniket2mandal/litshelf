@@ -10,9 +10,19 @@ use App\Http\Controllers\Controller;
 class BookController extends Controller
 {
     public function index(){
-        $books=Book::all();
-        $categories = Category::with('category')->pluck('CategoryName');
- return view('Admin.Books.index',compact('books','categories'));
+        $books=Book::with('category')->get();
+        // $categoryIds = $books->pluck('CategoryID');
+        // $categoryIdsArray = array_values($categoryIds->toArray());
+// dd($categoryIds);
+        // dd($categoryIdsArray);
+        // dd($categoryIds);
+        // dd($books);
+        // $categories = Category::whereIn('id',$categoryIds)->with('category')->pluck('CategoryName');
+        // $categories=Category::whereIn('id',$categoryIds)->pluck('CategoryName');
+        //  dd($categories);
+        // dd($categories);
+        // $categories = Category::whereIn('id', $categoryIds)->get();
+ return view('Admin.Books.index',compact('books'));
     }
     public function create(){
         $categories=Category::all();

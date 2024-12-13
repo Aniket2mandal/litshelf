@@ -15,11 +15,11 @@ return new class extends Migration
     {
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
-            $table->string('user_id');
+            $table->string('user_id')->constrained();
             $table->string('transaction_id');
-            $table->foreignId('book_id')->constrained();
-            $table->enum('status',['success'|'canceled'|'pending']);
+            $table->string('status');
             $table->string('totalAmount');
+            $table->string('Quantity');
             $table->timestamps();
         });
     }

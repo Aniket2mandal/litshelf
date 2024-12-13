@@ -12,25 +12,28 @@
 <link rel="stylesheet" href="{{asset('css/home.css')}}">
 <link rel="stylesheet" href="{{asset('css/about.css')}}">
 <link rel="stylesheet" href="{{asset('css/navigation.css')}}">
-<link rel="stylesheet" href="{{asset('css/productpage/index.css')}}">
+
 <link rel="stylesheet" href="{{asset('css/productpage/cart.css')}}">
+<link rel="stylesheet" href="{{asset('css/productpage/order.css')}}">
+<link rel="stylesheet" href="{{asset('css/categorypage/frontcategory.css')}}">
     <body>
         <div class="nav">
             <div class="logo">
-                <a href="{{route('front.index')}}"><h1 style="margin:0;padding:0">LitShelf</h1></a>
+                <a href="{{route('front.index')}}"><img src="{{asset('css/raw/logo.png')}}"></a>
             </div>
             <div class="lists">
-                <a href="{{route('front.index')}}">Categories</a>
-                <a href="">About</a>
+                <a href="{{route('front.category')}}">Categories</a>
+                <a href="#">About</a>
 
-                {{-- <a href="{{ route('front.logout')}}">Logout</a> --}}
+                <a href="{{route('front.order')}}">Orders</a>
                 {{-- <a href="">  <div class="nav-profile">
 
                 </div><a> --}}
-            </div>
+
             <a href="{{route('cart.page')}}"><img class="cart" src="/css/raw/cart.png"></a>
             <div class="cart-notification" id="cart-notification" style="display: none;">0</div>
             <a href="{{route('user.profile')}}"><img style="margin-right:15px;"src="/css/raw/profile.png"></a>
+        </div>
             {{-- <div class="nav-profile">{{route('user.profile')}}
                 <a href=""><img src="/raw/profile.png"></a>
             </div> --}}

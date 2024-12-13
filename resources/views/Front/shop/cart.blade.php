@@ -3,6 +3,16 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 @section('content1')
+<div class="success">
+    @if(session('success'))
+    <div class='alert-success'>{{session('success')}}</div>
+   @endif
+  </div>
+  <div class="error">
+    @if(session('error'))
+    <div class='alert-danger'>{{session('error')}}</div>
+   @endif
+  </div>
     <div class="cartdiv">
         <div class="productside">
             <div class="items">
@@ -11,7 +21,8 @@
                     <div class="item-row">
                         <!-- Book Image -->
                         <img src="/css/raw/cross.png" class="cross">
-                        <input type="hidden" id="user-id" value="{{ $book['id'] }}">
+                        <input type="hidden" class="user-id" value="{{ $book['book_id'] }}">
+                        <input type="hidden" id="cart-id" value="{{ $book['id'] }}">
                         <div class="imagemain">
                             <img src="{{ asset('images/' . $book['image']) }}" class="image" alt="Book Image">
                         </div>
@@ -38,8 +49,6 @@
                 @endforeach
             </div>
 
-
-
         </div>
         <div class="paymentside">
             <div class="totalamount">
@@ -50,7 +59,7 @@
                     </div>
                     <div class="price">
                         <p id="grand-total">2000</p>
-                        <p id="delivery">100</p>
+                        <p id="delivery"></p>
                     </div>
                 </div>
                 <hr>
@@ -79,9 +88,14 @@
             </div>
         </div>
     </div>
+
     <script>
         $(document).ready(function() {
 
+            if ($('.items').children().length === 0) {
+                // Add "No Cart Added" text to .productside div
+                $('.productside').text('Nothing in Cart');
+            }
             $('.add').click(function(e) {
                 e.preventDefault();
 
@@ -122,17 +136,19 @@
 
             function updateGrandTotal() {
                 let grandTotal = 0;
-
+                let delivery=0;
                 // Loop through each row and sum the total prices
                 $('.item-row').each(function() {
                     let rowTotal = parseFloat($(this).find('#total-price')
                         .text()); // Get the total price of this row
-                    grandTotal += rowTotal; // Add it to the grand total
+                    grandTotal += rowTotal;
+
+                    delivery=100;// Add it to the grand total
                 });
                 // Update the grand total displayed in the #grand-total element
                 $('.price #grand-total').text(grandTotal);
-
-                let delivery = parseFloat($('#delivery').text());
+                 $('.price #delivery').text(delivery);
+                // let delivery = parseFloat($('#delivery').text());
                 console.log(delivery);
                 let finalprice = grandTotal + delivery;
                 $('.price2 #finalprice').text(finalprice);
@@ -141,7 +157,7 @@
 
             $('.cross').click(function(e) {
                 e.preventDefault();
-                let id = $(this).next('input[type="hidden"]').val();
+                let id = $(this).closest('div').find('#cart-id').val();
                 console.log(id);
                 let url = "{{ route('pricedelete', ':id') }}".replace(':id', id);
                 console.log(url);
@@ -184,6 +200,28 @@
     e.preventDefault();
     let shipping=$('#delivery').text();
     let price=$('#grand-total').text();
+
+     let book_id=$('.user-id').val();
+     console.log(book_id);
+    let BookIds = [];
+    $('.user-id').each(function() {
+
+    let book_id=$(this).val();
+    BookIds.push(book_id);
+});
+console.log(BookIds);
+
+let quantity=[];
+$('.quantity').each(function() {
+    // let book_id=$('.user-id').val();
+    let Quantity=$(this).text();
+    quantity.push(Quantity);
+});
+console.log(quantity);
+
+    let quantityDiv = $('.quantity-group #quantity').text();
+    console.log(quantityDiv);
+    // console.log(book_id);
     console.log(price);
     // window.location.href = `/account/payment/${phttps://uat.esewa.com.np/epay#/rice}`;  // Redirect to the new URL
 //     let url = `/account/payment?price=${encodeURIComponent(price)}&shipping=${encodeURIComponent(shipping)}`;
@@ -196,7 +234,9 @@ $.ajax({
         data: {
             _token: '{{ csrf_token() }}', // Include CSRF token for Laravel
             shipping: shipping,
-            price: price
+            price: price,
+            book_id:BookIds,
+            Quantity:quantity
         },
         success: function(response) {
             if (response.redirect_url) {
@@ -209,6 +249,7 @@ $.ajax({
             console.error(xhr.responseText);
         }
     });
+
 });
     </script>
 @endsection

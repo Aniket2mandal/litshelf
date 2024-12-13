@@ -52,9 +52,9 @@ AFTER USING PLUCK FUNCTION
                     {{-- <td>{{$categories->CategoryName}}</td> --}}
 
                     <td>
-                        @foreach($categories as $item)
-                        {{$item}}
-                        @endforeach
+
+                        {{$items->category->CategoryName}}
+
                     </td>
 
                     <td>

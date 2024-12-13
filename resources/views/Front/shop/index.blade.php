@@ -2,22 +2,23 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<link rel="stylesheet" href="{{asset('css/productpage/index.css')}}">
 @section('content1')
     {{-- {{$item->id}}
 {{$item->Title}}
 {{$item->Author}}
 {{$item->Price}} --}}
 
-    <div class="product">
+    <div class="products">
         @foreach ($book_data as $item)
-            <div class="product-image">
+            <div class="products-image">
                 @if ($item->image)
                     <img src="{{ asset('images/' . $item->image) }}">
                 @else
                     <img src="#">
                 @endif
             </div>
-            <div class="product-details">
+            <div class="products-details">
                 <div class="catlist">
 
                     <p>
@@ -29,7 +30,7 @@
                         {{ $item->Title }}
                     </p>
                 </div>
-                <div class="product-name">
+                <div class="products-name">
                     <h1>{{ $item->Title }}</h1>
                     <h1 id="price">{{ $item->Price }}</h1>
                     <input type="hidden" id="productid" name="productid" value="{{ $item->id }}">

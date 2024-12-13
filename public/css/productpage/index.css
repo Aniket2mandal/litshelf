@@ -1,4 +1,4 @@
-.product{
+.products{
 display:flex;
 margin-top:50px;
 margin-left:50px;
@@ -11,25 +11,25 @@ padding-bottom:50px;
 border-radius: 10px;
 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-.product-image{
+.products-image{
     background-color: rgb(174, 172, 172);
     height:600px;
     width:500px;
     margin-top:50px;
     margin-left: 50px;
 }
-.product-image img{
+.products-image img{
     height:590px;
     width:490px;
    margin-top:5px;
    margin-left:5px;
 }
-.product-details{
+.products-details{
     margin-top:30px;
     margin-left:150px;
 
 }
-.product-name{
+.products-name{
 width:500px;
 margin-top:-25px;
 display:flex;

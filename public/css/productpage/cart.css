@@ -208,3 +208,28 @@ box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     color: #333;
     text-align: right;
 }
+.success{
+    align-items: center;
+}
+.alert-success{
+    background-color: rgba(53, 207, 61, 0.3);
+    height:fit-content;
+    width:1000px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    /* margin-top:200px; */
+    margin-left: 20%;
+    border-radius: 5px;
+    margin-top:150px;
+}
+.alert-success{
+    background-color: red;
+    height:fit-content;
+    width:1000px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    /* margin-top:200px; */
+    margin-left: 20%;
+    border-radius: 5px;
+    margin-top:150px;
+}

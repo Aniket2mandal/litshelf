@@ -14,10 +14,9 @@ class FrontHomeController extends Controller
         $categories=Category::where('status','Active')->get();
         // TAKE FUNCTION IS USED TO SELECT ONLY FOUR PRODUCT FROM DATABASE IN
         // $books VARIABLE
-        $books=Book::take(4)->get();
-        $love_books=Book::where('CategoryID','2')->take(4)->get();
-        $horror_books=Book::where('CategoryID','1')->take(4)->get();
-        return view('Front.index',compact('categories','books','love_books','horror_books'));
+        $books=Category::with('book')->take(4)->get();
+        $book=Book::with('category')->take(4)->get();
+        return view('Front.index',compact('categories','books','book'));
     }
     public function logout(){
         Auth::logout();
